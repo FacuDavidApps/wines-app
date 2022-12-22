@@ -14,8 +14,8 @@ const HomePage: NextPage = () => {
   return (
     <>
       <ShopLayout
-        title={"Teslo Shop - Home"}
-        pageDescription={"Encuentra los mejores productos de teslo aqui"}
+        title={"New Era - Home"}
+        pageDescription={"Encuentra los mejores vinos y espumantes aqui"}
       >
         <Typography variant="h1" component="h1">
           Tienda

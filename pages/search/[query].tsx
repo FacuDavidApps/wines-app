@@ -13,8 +13,8 @@ const SearchPage: NextPage<Props> = ({ products }) => {
   return (
     <>
       <ShopLayout
-        title={"Teslo Shop - Search"}
-        pageDescription={"Encuentra los mejores productos de teslo aqui"}
+        title={"New Era - Search"}
+        pageDescription={"Encuentra los mejores vinos y espumantes aqui"}
       >
         <Typography variant="h1" component="h1">
           Buscar Productos
