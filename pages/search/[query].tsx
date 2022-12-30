@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { NextPage, GetServerSideProps } from "next";
 import { ShopLayout } from "../../components/layouts";
 import { ProductList } from "../../components/products";
@@ -7,9 +7,11 @@ import { IProduct } from "../../interfaces/products";
 
 interface Props {
   products: IProduct[];
+  foundProducts: boolean;
+  query: string;
 }
 
-const SearchPage: NextPage<Props> = ({ products }) => {
+const SearchPage: NextPage<Props> = ({ products, foundProducts, query }) => {
   return (
     <>
       <ShopLayout
@@ -19,9 +21,20 @@ const SearchPage: NextPage<Props> = ({ products }) => {
         <Typography variant="h1" component="h1">
           Buscar Productos
         </Typography>
-        <Typography variant="h2" sx={{ mb: 1 }}>
-          Hola mundo
-        </Typography>
+        {foundProducts ? (
+          <Typography variant="h2" sx={{ mb: 1 }}>
+            {query}
+          </Typography>
+        ) : (
+          <Box display="flex">
+            <Typography variant="h2" sx={{ mb: 1 }}>
+              No se encontro ningun producto
+            </Typography>
+            <Typography variant="h2" sx={{ ml: 1 }} color="secondary">
+             {query}
+            </Typography>
+          </Box>
+        )}
 
         <ProductList products={products} />
       </ShopLayout>
